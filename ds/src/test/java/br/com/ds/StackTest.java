@@ -2,6 +2,7 @@ package br.com.ds;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -83,6 +84,16 @@ public class StackTest {
 
         assertFalse(stack.pop());
         assertTrue(stack.isEmpty());
+       
+    }
+
+    @Test
+    void testRepeat(){
+        assertEquals(-1, stack.findIndex(1));
+        assertTrue(stack.push( 1));
+        assertNotEquals(-1, stack.findIndex(1));
+        assertFalse(stack.push( 1 ));
+        assertTrue(stack.push( 2 ));
        
     }
 

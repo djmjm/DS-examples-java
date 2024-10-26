@@ -1,18 +1,22 @@
 package br.com.ds.stack;
 
-
-
 public class Stack {
     private int size;
     private int topIndex;
     private int[] content;
     private int returnValue;
+    private boolean repeatElem;
+
 
     public Stack(int size){
+        this( size, false );
+    }
+
+    public Stack(int size, boolean repeatElem){
         this.size = size;
         this.topIndex = -1;
         this.content = new int[this.size];
-        
+        this.repeatElem = repeatElem;
     }
 
     public boolean isFull(){
@@ -31,10 +35,17 @@ public class Stack {
         return this.content[this.topIndex];
     }
 
-    public boolean push(int new_value){
+    public boolean push(int newValue){
         if(!this.isFull()){
+
+            if(!repeatElem){
+                if(findIndex(newValue) != -1){
+                    return false;
+                }
+            }
+
             this.topIndex++;
-            this.content[this.topIndex] = new_value;
+            this.content[this.topIndex] = newValue;
             return true;
         }else{
             return false;
@@ -53,6 +64,17 @@ public class Stack {
 
     public int getValueTop(){
         return this.returnValue;
+    }
+
+    public int findIndex(int elem){
+
+        for(int i = 0; i <= this.topIndex; i++){
+            if(this.content[i] == elem){
+                return this.topIndex - i + 1;
+            }
+        }
+
+        return -1;
     }
 
     public String print(){

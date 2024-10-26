@@ -11,7 +11,7 @@ public class Stack {
     public Stack(int size){
         this.size = size;
         this.topIndex = -1;
-        this.content = new int[size];
+        this.content = new int[this.size];
         
     }
 
@@ -33,7 +33,7 @@ public class Stack {
 
     public boolean push(int new_value){
         if(!this.isFull()){
-            this.topIndex += 1;
+            this.topIndex++;
             this.content[this.topIndex] = new_value;
             return true;
         }else{
@@ -61,8 +61,8 @@ public class Stack {
         }else{
             String returnValue = "";
 
-            for(int i = 0; i < this.topIndex; i++){
-                returnValue += this.content[i] + "\n";
+            for(int i = 0; i < this.size(); i++){
+                returnValue += i+1 + " - " + this.content[i] + "\n";
             }
 
             return returnValue;

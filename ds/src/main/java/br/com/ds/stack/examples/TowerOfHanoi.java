@@ -1,7 +1,8 @@
 package br.com.ds.stack.examples;
 
+import java.util.ArrayList;
+
 import br.com.ds.stack.Stack;
-import br.com.ds.stack.examples.TowerOfHanoi.Movements;
 
 /** ... 
  * 
@@ -29,9 +30,11 @@ public class TowerOfHanoi {
         STACK1, STACK2, STACK3
     };
 
-    private Stack stack1;
-    private Stack stack2;
-    private Stack stack3;
+    private final Stack stack1;
+    private final Stack stack2;
+    private final Stack stack3;
+
+    private final int sizeGame;
 
 
     public TowerOfHanoi(int size){
@@ -44,6 +47,8 @@ public class TowerOfHanoi {
             stack1.push( (int) Math.random() * size + 1  );
             stack2.push( (int) Math.random() * size + 1  );
         }
+
+        this.sizeGame = size + 1;
     }
 
     public boolean move( Movements from, Movements to ){
@@ -88,6 +93,35 @@ public class TowerOfHanoi {
              }
         }
 
+
+        return true;
+    }
+
+    public boolean win(){
+
+        ArrayList<Integer> stack1Numbers = new ArrayList<Integer>();
+        ArrayList<Integer> stack2Numbers = new ArrayList<Integer>();
+
+        for(int i = 0; i < this.sizeGame; i++){
+            if(this.stack1.findIndex(i) != -1){
+                stack1Numbers.add(i);
+            }
+
+            if(this.stack2.findIndex(i) != -1){
+                stack2Numbers.add(i);
+            }
+
+        }
+
+        for(int i = 0; i < stack1Numbers.size(); i++){
+            Integer elem = stack1Numbers.get(i);
+
+            for(int j = elem - 1; j >= 0; j--){
+                if(stack2Numbers.contains(j)){
+                    return false;   
+                }
+            }
+        }
 
         return true;
     }

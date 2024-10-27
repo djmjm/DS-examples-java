@@ -78,14 +78,26 @@ public class Stack {
     }
 
     public String print(){
+        return this.print(false);
+    }
+
+    public String print(boolean side){
         if(this.isEmpty()){
             return "A pilha está vazia!!!";
         }else{
             String returnValue = "";
 
+            if(side){ returnValue += "| "; }
+
             for(int i = 0; i < this.size(); i++){
-                returnValue += i+1 + " - " + this.content[i] + "\n";
+                if(side){
+                    returnValue += this.content[i] + " - ";
+                }else{
+                    returnValue += i+1 + " - " + this.content[i] + "\n";
+                }
             }
+
+            if(side){ returnValue += " |"; }
 
             return returnValue;
         }

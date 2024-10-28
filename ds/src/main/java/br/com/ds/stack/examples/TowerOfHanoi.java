@@ -44,8 +44,8 @@ public class TowerOfHanoi {
         this.stack3 = new Stack(size, true);
 
         for(int i = 0; i < size; i++){
-            stack1.push( (int) Math.random() * size + 1  );
-            stack2.push( (int) Math.random() * size + 1  );
+            stack1.push( (int) (Math.random() * size + 1)  );
+            stack2.push( (int) (Math.random() * size + 1)  );
         }
 
         this.sizeGame = size + 1;
@@ -60,36 +60,66 @@ public class TowerOfHanoi {
         if(from == Movements.STACK1){
             if(to == Movements.STACK2) { 
                 this.stack1.pop();
-                return this.stack2.push(  this.stack1.getValueTop()  );
+                int valueTmp = this.stack1.getValueTop();
+                if(this.stack2.push(  valueTmp  )){
+                    return true;
+                }else{
+                    this.stack1.push(valueTmp);
+                }
              }
 
              if(to == Movements.STACK3) { 
                 this.stack1.pop();
-                return this.stack3.push(  this.stack1.getValueTop()  );
+                int valueTmp = this.stack1.getValueTop();
+                if(this.stack3.push(  valueTmp  )){
+                    return true;
+                }else{
+                    this.stack1.push(valueTmp);
+                }
              }
         }
 
         if(from == Movements.STACK2){
             if(to == Movements.STACK1) { 
                 this.stack2.pop();
-                return this.stack1.push(  this.stack2.getValueTop()  );
+                int valueTmp = this.stack2.getValueTop();
+                if(this.stack1.push(  valueTmp  )){
+                    return true;
+                }else{
+                    this.stack2.push(valueTmp);
+                }
              }
 
              if(to == Movements.STACK3) { 
                 this.stack2.pop();
-                return this.stack3.push(  this.stack2.getValueTop()  );
+                int valueTmp = this.stack2.getValueTop();
+                if(this.stack3.push(  valueTmp  )){
+                    return true;
+                }else{
+                    this.stack2.push(valueTmp);
+                }
              }
         }
 
         if(from == Movements.STACK3){
             if(to == Movements.STACK1) { 
                 this.stack3.pop();
-                return this.stack1.push(  this.stack3.getValueTop()  );
+                int valueTmp = this.stack3.getValueTop();
+                if(this.stack1.push(  valueTmp  )){
+                    return true;
+                }else{
+                    this.stack3.push(valueTmp);
+                }
              }
 
              if(to == Movements.STACK2) { 
                 this.stack3.pop();
-                return this.stack2.push(  this.stack3.getValueTop()  );
+                int valueTmp = this.stack3.getValueTop();
+                if(this.stack2.push(  valueTmp  )){
+                    return true;
+                }else{
+                    this.stack3.push(valueTmp);
+                }
              }
         }
 
@@ -123,7 +153,27 @@ public class TowerOfHanoi {
             }
         }
 
-        return true;
+        return true && stack3.isEmpty();
+    }
+
+    public String print(){
+
+        String returnString = "";
+
+        System.out.println("Numeros na pilha 1:");
+        System.out.println(stack1.print(true));
+        System.out.println("-------------------");
+
+        System.out.println("Numeros na pilha 2:");
+        System.out.println(stack2.print(true));
+        System.out.println("-------------------");
+
+        System.out.println("Numeros na pilha 3:");
+        System.out.println(stack3.print(true));
+        System.out.println("-------------------");
+
+        return returnString;
+
     }
 
 

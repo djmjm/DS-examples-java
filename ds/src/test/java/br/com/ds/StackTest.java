@@ -31,9 +31,9 @@ public class StackTest {
 
     @Test
     void testPop(){
-        assertTrue(stack.push( (int) Math.random() ));
-        assertTrue(stack.push( (int) Math.random() ));
-        assertTrue(stack.push( (int) Math.random() ));
+        assertTrue(stack.push( (int) (Math.random() * 1000) ));
+        assertTrue(stack.push( (int)  (Math.random() * 1000) ));
+        assertTrue(stack.push( (int) (Math.random() * 1000) ));
         assertFalse(stack.isEmpty());
         assertFalse(stack.isFull());
 
@@ -47,22 +47,22 @@ public class StackTest {
 
     @Test
     void testFull(){
-        assertTrue(stack.push( (int) Math.random() ));
+        assertTrue(stack.push( (int) (Math.random() * 1000) ) );
         assertFalse(stack.isFull());
 
-        assertTrue(stack.push( (int) Math.random() ));
+        assertTrue(stack.push( (int) (Math.random() * 1000) ) );
         assertFalse(stack.isFull());
 
-        assertTrue(stack.push( (int) Math.random() ));
+        assertTrue(stack.push( (int) (Math.random() * 1000) ) );
         assertFalse(stack.isFull());
 
-        assertTrue(stack.push( (int) Math.random() ));
+        assertTrue(stack.push( (int) (Math.random() * 1000) ) );
         assertFalse(stack.isFull());
 
-        assertTrue(stack.push( (int) Math.random() ));
+        assertTrue(stack.push( (int) (Math.random() * 1000) ) );
         assertTrue(stack.isFull());
 
-        assertFalse(stack.push( (int) Math.random() ));
+        assertFalse(stack.push( (int) (Math.random() * 1000) ) );
         assertTrue(stack.isFull());
        
     }

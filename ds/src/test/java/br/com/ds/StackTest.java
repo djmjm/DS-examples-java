@@ -12,7 +12,6 @@ import br.com.ds.stack.Stack;
 public class StackTest {
     private Stack stack;
     
-
     @BeforeEach
     void setup(){
         stack = new Stack(5);

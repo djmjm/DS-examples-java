@@ -10,6 +10,11 @@ public class Vector {
     private boolean isRepeatElem;
 
 
+
+    public Vector(int size){
+        this(size, false);
+    }
+
     public Vector(int size, boolean isRepeatElem){
 
         this.sizeMax = size;
@@ -120,5 +125,14 @@ public class Vector {
 
         return returnString;
     }
+
+    public boolean isEmpty(){
+        return sizeCurrent == 0;
+    }
+
+    public boolean isFull(){
+        return sizeCurrent == sizeMax;
+    }
+
 
 }

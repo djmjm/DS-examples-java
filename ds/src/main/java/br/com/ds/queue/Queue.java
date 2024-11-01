@@ -38,7 +38,7 @@ public class Queue {
         if(isEmpty()){ return Queue.NULL_RESULT; };
 
         int returnValue = content[posStart];
-        posFinal--;
+        posStart--;
 
         return returnValue;
     }
@@ -86,5 +86,11 @@ public class Queue {
         returnString += " END |";
 
         return returnString;
+    }
+
+    public String peek(){
+        if(isEmpty()){ return "Nenhum elemento na fila!"; };
+
+        return   String.valueOf(content[posStart]);
     }
 }

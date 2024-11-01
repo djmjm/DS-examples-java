@@ -5,3 +5,4 @@ Este repositório contém exemplos práticos de estruturas de dados implementada
 # Data Structures Examples in Java
 
 This repository contains practical examples of data structures implemented in Java. Each example is designed to help understand the key data structures and their applications in development projects.
+

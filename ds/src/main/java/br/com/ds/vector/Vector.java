@@ -65,7 +65,7 @@ public class Vector {
         if(sizeCurrent >= sizeMax){ return false; }
 
 
-        for(int i = sizeCurrent; i >= index; i--){
+        for(int i = sizeCurrent - 1; i >= index; i--){
             content[i+1] = content[i];
         }
 
@@ -82,6 +82,10 @@ public class Vector {
 
     public boolean remove(int index){
 
+        if(isEmpty()){
+            return false;
+        }
+
         if(findValue(index) == Vector.NULL_RESULT){
             return false;
         }
@@ -97,9 +101,11 @@ public class Vector {
 
     public boolean removeValueAll( int value ){
 
-        for(int i = 0; i < sizeCurrent; i++){
-            if(findValue(i) == value){
-                remove(i);
+        while(contains(value)){
+            for(int i = 0; i < sizeCurrent; i++){
+                if(findValue(i) == value){
+                    remove(i);
+                }
             }
         }
 
@@ -132,6 +138,14 @@ public class Vector {
 
     public boolean isFull(){
         return sizeCurrent == sizeMax;
+    }
+
+    public boolean contains(int value){
+        if(findIndex(value) != Vector.NULL_RESULT){
+            return true;
+        }
+
+        return false;
     }
 
 

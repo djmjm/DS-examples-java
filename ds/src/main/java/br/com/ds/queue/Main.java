@@ -71,6 +71,42 @@ public class Main {
             queue.peek()
         );
 
+        System.out.println(
+            queue.findPosition(-2)
+        );
+
+        System.out.println(
+            queue.findPosition(999)
+        );
+
+        System.out.println(
+            queue.findPosition(-4848)
+        );
+
+
+        System.out.println(
+            queue.print()
+        );
+
+        System.out.println(
+            queue.dequeue()
+        );
+
+        System.out.println(
+            queue.print()
+        );
+
+        System.out.println(
+            queue.findPosition(999)
+        );
+
+        System.out.println(
+            queue.findPosition(-2)
+        );
+
+        System.out.println(
+            queue.peek()
+        );
         
 
 

@@ -77,6 +77,18 @@ public class Queue {
         return returnString;
     }
 
+    public int findPosition(int elem){
+
+        for(int i = posStart; i < posStart + getSize(); i++){
+            int index = i % size;
+            if(content[index] == elem){
+                return i - posStart + 1;
+            }
+        }
+
+        return Queue.NULL_RESULT;
+    }
+
     public String peek(){
         if(isEmpty()){ return "Nenhum elemento na fila!"; };
 

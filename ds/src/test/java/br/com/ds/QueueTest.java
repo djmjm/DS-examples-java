@@ -153,7 +153,39 @@ public class QueueTest {
         assertNotEquals(Queue.NULL_RESULT, queue.dequeue());
         assertEquals(Queue.NULL_RESULT, queue.dequeue());
 
+    }
 
+    @Test
+    void testFindPosition(){
+
+        assertTrue(queue.enqueue(1));
+        assertTrue(queue.enqueue(2));
+        assertTrue(queue.enqueue(3));
+        assertTrue(queue.enqueue(4));
+        assertTrue(queue.enqueue(5454545));
+        assertFalse(queue.enqueue(484848));
+
+        assertEquals(1, queue.findPosition(1));
+        assertEquals(2, queue.findPosition(2));
+        assertEquals(3, queue.findPosition(3));
+        assertEquals(4, queue.findPosition(4));
+        assertEquals(5, queue.findPosition(5454545));
+        assertEquals(Queue.NULL_RESULT, queue.findPosition(484848));
+
+        assertNotEquals(Queue.NULL_RESULT, queue.dequeue());
+        assertEquals(1, queue.findPosition(2));
+
+        assertNotEquals(Queue.NULL_RESULT, queue.dequeue());
+        assertEquals(1, queue.findPosition(3));
+
+        assertNotEquals(Queue.NULL_RESULT, queue.dequeue());
+        assertEquals(1, queue.findPosition(4));
+
+        assertNotEquals(Queue.NULL_RESULT, queue.dequeue());
+        assertEquals(1, queue.findPosition(5454545));
+
+        assertNotEquals(Queue.NULL_RESULT, queue.dequeue());
+        assertEquals(Queue.NULL_RESULT, queue.findPosition(5454545));
 
     }
 

@@ -3,7 +3,6 @@ package br.com.ds.queue;
 public class Main {
     public static void main(String[] args){
         Queue queue = new Queue(5);
-        Queue queue2 = new Queue(5);
 
         System.out.println(
             queue.print()

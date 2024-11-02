@@ -9,10 +9,10 @@ public class Queue {
     private int posStart, posFinal;
 
     public Queue(int size){
-        this.size = size;
+        this.size = size + 1;
         this.posFinal = 0;
         this.posStart = 0;
-        this.content = new int[size];
+        this.content = new int[this.size];
     }
 
     public boolean isEmpty(){
@@ -26,9 +26,11 @@ public class Queue {
     public boolean enqueue(int elem){
         if(isFull()){ return false; };
 
-        int newPos = (posFinal + 1) % size;
+        int newPos = (posFinal) % size;
         content[newPos] = elem;
         posFinal++;
+
+        if(posFinal == size){ posFinal = 0; }
 
         return true;
     }
@@ -38,17 +40,19 @@ public class Queue {
         if(isEmpty()){ return Queue.NULL_RESULT; };
 
         int returnValue = content[posStart];
-        posStart--;
+        posStart++;
+
+        if(posStart == size){ posStart = 0; }
 
         return returnValue;
     }
 
     public int getSize(){
-        if(posFinal < posStart){
-            return posStart - posFinal;
+        if(posFinal > posStart){
+            return posFinal - posStart;
         }
 
-        if(posFinal > posStart){
+        if(posFinal < posStart){
             return size - posStart + posFinal;
         }
 
@@ -58,32 +62,17 @@ public class Queue {
     }
 
     public String print(){
-        String returnString = "| ";
+        String returnString = "| HEAD ";
 
-        if(posStart < posFinal){
-            for(int i = posStart; i < posFinal; i++ ){
-                returnString += content[i] + " - ";
-            }
+        for(int i = posStart; i < posStart + getSize(); i++ ){
+
+            int index = i % size;
+
+            returnString += content[index] + " - ";
         }
+          
 
-        if(posFinal > posStart){
-            for(int i = posFinal; i >= posStart; i-- ){
-                returnString += content[i] + " - ";
-            }
-        }
-
-        if(posStart == posFinal){
-           if(isFull()){
-                for(int i = posStart; i < posStart + size; i++ ){
-
-                    int index = i % size;
-
-                    returnString += content[index] + " - ";
-                }
-            }
-        }
-
-        returnString += " END |";
+        returnString += " TAIL |";
 
         return returnString;
     }
@@ -91,6 +80,17 @@ public class Queue {
     public String peek(){
         if(isEmpty()){ return "Nenhum elemento na fila!"; };
 
-        return   String.valueOf(content[posStart]);
+        
+            return   String.valueOf(content[posStart % size]);
+
+
+    }
+
+    public int getPosStart(){
+        return posStart;
+    }
+
+    public int getPosFinal(){
+        return posFinal;
     }
 }

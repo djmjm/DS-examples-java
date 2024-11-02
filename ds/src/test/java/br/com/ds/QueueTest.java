@@ -29,5 +29,133 @@ public class QueueTest {
         assertTrue(queue.isEmpty());
     }
 
+    @Test
+    void testIsFull(){
+        assertFalse(queue.isFull());
+        assertTrue(queue.enqueue(555));
+
+        assertFalse(queue.isFull());
+        assertTrue(queue.enqueue(555));
+
+        assertFalse(queue.isFull());
+        assertTrue(queue.enqueue(555));
+
+        assertFalse(queue.isFull());
+        assertTrue(queue.enqueue(555));
+
+        assertFalse(queue.isFull());
+        assertTrue(queue.enqueue(555));
+
+        assertTrue(queue.isFull());
+        
+        assertNotEquals(Queue.NULL_RESULT, queue.dequeue());
+
+        assertFalse(queue.isFull());
+
+    }
+
+    @Test
+    void testSize(){
+
+        assertEquals(0, queue.getSize());
+        assertTrue(queue.enqueue(555));
+
+        assertEquals(1, queue.getSize());
+        assertTrue(queue.enqueue(555));
+
+        assertEquals(2, queue.getSize());
+        assertTrue(queue.enqueue(555));
+
+        assertEquals(3, queue.getSize());
+        assertTrue(queue.enqueue(555));
+
+        assertEquals(4, queue.getSize());
+        assertTrue(queue.enqueue(555));
+
+        assertEquals(5, queue.getSize());
+        assertFalse(queue.enqueue(555));
+
+        assertEquals(5, queue.getSize());
+        
+        assertNotEquals(Queue.NULL_RESULT, queue.dequeue());
+        assertEquals(4, queue.getSize());
+
+    }
+
+    @Test
+    void testPeek(){
+
+        assertTrue(queue.enqueue(1));
+        assertTrue(queue.enqueue(2));
+        assertTrue(queue.enqueue(3));
+        assertTrue(queue.enqueue(4));
+
+        assertEquals("1", queue.peek());
+        assertNotEquals(Queue.NULL_RESULT, queue.dequeue());
+
+        assertEquals("2", queue.peek());
+        assertNotEquals(Queue.NULL_RESULT, queue.dequeue());
+
+        assertEquals("3", queue.peek());
+        assertNotEquals(Queue.NULL_RESULT, queue.dequeue());
+
+        assertEquals("4", queue.peek());
+        assertNotEquals(Queue.NULL_RESULT, queue.dequeue());
+
+    }
+
+    @Test
+    void testEnqueue(){
+
+        assertTrue(queue.enqueue(1));
+        assertTrue(queue.enqueue(2));
+        assertTrue(queue.enqueue(3));
+        assertTrue(queue.enqueue(4));
+        assertTrue(queue.enqueue(5454545));
+
+        assertFalse(queue.enqueue(484848));
+
+        assertEquals("1", queue.peek());
+
+
+    }
+
+    @Test
+    void testDequeue(){
+
+        assertTrue(queue.enqueue(1));
+        assertTrue(queue.enqueue(2));
+        assertTrue(queue.enqueue(3));
+        assertTrue(queue.enqueue(4));
+        assertTrue(queue.enqueue(5454545));
+
+        assertFalse(queue.enqueue(484848));
+
+        assertNotEquals(Queue.NULL_RESULT, queue.dequeue());
+        assertNotEquals(Queue.NULL_RESULT, queue.dequeue());
+        assertNotEquals(Queue.NULL_RESULT, queue.dequeue());
+        assertNotEquals(Queue.NULL_RESULT, queue.dequeue());
+        assertNotEquals(Queue.NULL_RESULT, queue.dequeue());
+        assertEquals(Queue.NULL_RESULT, queue.dequeue());
+
+        assertTrue(queue.enqueue(1));
+        assertTrue(queue.enqueue(2));
+        assertTrue(queue.enqueue(3));
+        assertTrue(queue.enqueue(4));
+        assertTrue(queue.enqueue(5454545));
+
+        assertFalse(queue.enqueue(484848));
+
+        assertNotEquals(Queue.NULL_RESULT, queue.dequeue());
+        assertNotEquals(Queue.NULL_RESULT, queue.dequeue());
+        assertNotEquals(Queue.NULL_RESULT, queue.dequeue());
+        assertNotEquals(Queue.NULL_RESULT, queue.dequeue());
+        assertNotEquals(Queue.NULL_RESULT, queue.dequeue());
+        assertEquals(Queue.NULL_RESULT, queue.dequeue());
+
+
+
+    }
+
 
 }

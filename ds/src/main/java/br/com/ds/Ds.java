@@ -2,7 +2,7 @@ package br.com.ds;
 
 /**
  *
- * @author Douglas Janovik Maliszewski
+ * @author Douglas Janovik Maliszewski(djmjm)
  */
 public class Ds {
 

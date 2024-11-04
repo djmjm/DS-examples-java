@@ -6,7 +6,7 @@ public class Server {
     public static void main(String[] Args){
 
         int size = 10;
-        int threadsNumber = 100;
+        int threadsNumber = 1;
         int loopNumber = 10;
         int loopCurrent = 0;
         int maxRequestByLoop = 1000;

@@ -47,11 +47,43 @@ public class Main {
         );
 
         System.out.println(
-            deque.enqueueFirst(6)
+            deque.enqueueFirst(600)
         );
 
         System.out.println(
             deque.peekLast()
+        );
+
+        System.out.println(
+            deque.print()
+        );
+
+        System.out.println(
+            deque.getPosFinal()
+        );
+
+        System.out.println(
+            deque.peekLast()
+        );
+
+        System.out.println(
+            deque.getPosStart()
+        );
+
+        System.out.println(
+            deque.dequeueLast()
+        );
+
+        System.out.println(
+            deque.getPosFinal()
+        );
+
+        System.out.println(
+            deque.getPosStart()
+        );
+
+        System.out.println(
+            deque.print()
         );
 
     }

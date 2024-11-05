@@ -23,10 +23,8 @@ public class Deque extends Queue{
 
         if(isEmpty()){ return Queue.NULL_RESULT; };
 
+        posFinal--; if(posFinal < 0){ posFinal = size - 1; }
         int returnValue = content[posFinal];
-        posStart--;
-
-        if(posStart < 0){ posStart = size - 1; }
 
         return returnValue;
     }

@@ -43,8 +43,8 @@ public class Queue {
 
         if(isEmpty()){ return Queue.NULL_RESULT; };
 
-        int returnValue = content[posStart];
         posStart++;
+        int returnValue = content[posStart];
 
         if(posStart == size){ posStart = 0; }
 

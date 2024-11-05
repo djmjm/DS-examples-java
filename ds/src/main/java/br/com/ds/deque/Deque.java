@@ -8,15 +8,28 @@ public class Deque extends Queue{
         super(size);
     }
 
-    public boolean enqueueLast(int elem){
+    public boolean enqueueFirst(int elem){
         if(isFull()){ return false; };
 
-        int newPos = (posFinal) % size;
+        int newPos = (posStart) % size;
         content[newPos] = elem;
-        posFinal++;
+        posStart--;
 
-        if(posFinal == size){ posFinal = 0; }
+        if(posStart < 0){ posStart = size - 1; }
 
         return true;
     }
+
+    public int dequeueLast(){
+
+        if(isEmpty()){ return Queue.NULL_RESULT; };
+
+        int returnValue = content[posFinal];
+        posStart--;
+
+        if(posStart < 0){ posStart = size - 1; }
+
+        return returnValue;
+    }
+
 }

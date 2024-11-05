@@ -4,9 +4,9 @@ public class Queue {
 
     public static int NULL_RESULT = -1;
     
-    private int[] content;
-    private int size;
-    private int posStart, posFinal;
+    protected int[] content;
+    protected int size;
+    protected int posStart, posFinal;
 
     public Queue(){
         this(5);

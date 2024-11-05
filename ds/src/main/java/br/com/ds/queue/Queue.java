@@ -8,6 +8,10 @@ public class Queue {
     private int size;
     private int posStart, posFinal;
 
+    public Queue(){
+        this(5);
+    }
+
     public Queue(int size){
         this.size = size + 1;
         this.posFinal = 0;

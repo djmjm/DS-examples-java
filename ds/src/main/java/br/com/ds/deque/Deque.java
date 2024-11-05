@@ -1,5 +1,7 @@
 package br.com.ds.deque;
 
-public class Deque {
+import br.com.ds.queue.Queue;
+
+public class Deque extends Queue{
     
 }

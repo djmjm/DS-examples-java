@@ -11,11 +11,10 @@ public class Deque extends Queue{
     public boolean enqueueFirst(int elem){
         if(isFull()){ return false; };
 
+        posStart--;
+        if(posStart < 0){ posStart = size - 1; }
         int newPos = (posStart) % size;
         content[newPos] = elem;
-        posStart--;
-
-        if(posStart < 0){ posStart = size - 1; }
 
         return true;
     }
@@ -30,6 +29,11 @@ public class Deque extends Queue{
         if(posStart < 0){ posStart = size - 1; }
 
         return returnValue;
+    }
+
+    public String peekLast(){
+        if(isEmpty()){ return "Nenhum elemento na fila!"; };
+        return   String.valueOf(content[posStart % size]);
     }
 
 }

@@ -13,8 +13,7 @@ public class Deque extends Queue{
 
         posStart--;
         if(posStart < 0){ posStart = size - 1; }
-        int newPos = (posStart) % size;
-        content[newPos] = elem;
+        content[posStart] = elem;
 
         return true;
     }
@@ -31,7 +30,9 @@ public class Deque extends Queue{
 
     public String peekLast(){
         if(isEmpty()){ return "Nenhum elemento na fila!"; };
-        return   String.valueOf(content[posStart % size]);
+        int currentPostPeek = posFinal - 1;
+        if(currentPostPeek < 0) {currentPostPeek = size - 1;}
+        return   String.valueOf(content[currentPostPeek]);
     }
 
 }

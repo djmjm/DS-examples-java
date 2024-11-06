@@ -1,7 +1,5 @@
 package br.com.ds;
 
-// TODO FIX
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
@@ -40,11 +38,20 @@ public class DequeTest {
         assertEquals( "111111" , deque.peek());
 
         assertEquals(2 , deque.dequeueLast());
+        assertEquals( "3" , deque.peekLast());
 
+        assertEquals(3 , deque.dequeueLast());
+        assertEquals( "4" , deque.peekLast());
 
-        assertEquals( "2" , deque.peekLast());
+        assertEquals(4 , deque.dequeueLast());
+        assertEquals( "5" , deque.peekLast());
 
-        
+        assertEquals(5 , deque.dequeueLast());
+        assertEquals( "111111" , deque.peekLast());
+
+        assertEquals(111111 , deque.dequeueLast());
+
+        assertTrue(deque.isEmpty());
     }
 
 
@@ -77,19 +84,25 @@ public class DequeTest {
         assertEquals( "1" , deque.peekLast());
 
         assertTrue(deque.enqueueFirst(2));
-        assertEquals( "2" , deque.peekLast());
+        assertEquals( "2" , deque.peek());
+        assertEquals( "1" , deque.peekLast());
 
         assertTrue(deque.enqueueFirst(3));
-        assertEquals( "3" , deque.peekLast());
+        assertEquals( "3" , deque.peek());
+        assertEquals( "1" , deque.peekLast());
 
         assertTrue(deque.enqueueFirst(4));
-        assertEquals( "4", deque.peekLast());
+        assertEquals( "4", deque.peek());
+        assertEquals( "1" , deque.peekLast());
 
         assertTrue(deque.enqueueFirst(5));
-        assertEquals( "5", deque.peekLast());
+        assertEquals( "5", deque.peek());
+        assertEquals( "1" , deque.peekLast());
 
         assertFalse(deque.enqueueFirst(55));
-        assertEquals( "5", deque.peekLast());
+        assertEquals( "5", deque.peek());
+        assertEquals( "1" , deque.peekLast());
+
     }
 
 

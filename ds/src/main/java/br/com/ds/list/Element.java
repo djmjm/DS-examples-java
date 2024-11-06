@@ -41,10 +41,10 @@ public class Element {
     public String print(){
         String returnString = "";
 
-        returnString += "_______________" + id + "\n";
+        returnString += "_______________" +  "\n";
         returnString += "Name - " + name + "\n";
         returnString += "ID - " + id + "\n";
-        returnString += "_______________" + id + "\n";
+        returnString += "_______________" + "\n";
 
         return returnString;
     }

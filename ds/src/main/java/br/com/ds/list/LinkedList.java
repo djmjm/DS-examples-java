@@ -23,6 +23,33 @@ public class LinkedList {
         elem.setNext(null);
 
         return elem;
+
+    }
+
+    public Element getFirst(){
+        if(isEmpty()){ 
+            return null;
+        }
+
+        return start;
+    }
+
+    public Element getLast(){
+        if(isEmpty()){
+            return null;
+        }
+
+        Element elem = start;
+
+        while(elem.getNext() != null){
+            elem = elem.getNext();
+        }
+
+        return elem;
+    }
+
+    public boolean isEmpty(){
+        return start == null;
     }
 
 }

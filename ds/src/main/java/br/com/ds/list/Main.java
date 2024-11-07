@@ -22,19 +22,11 @@ public class Main {
         );
 
         System.out.println(
-            list.pop().print()
+            list.getFirst().print()
         );
 
         System.out.println(
-            list.pop().print()
-        );
-
-        System.out.println(
-            list.pop().print()
-        );
-
-        System.out.println(
-            list.pop().print()
+            list.getLast().print()
         );
 
     }

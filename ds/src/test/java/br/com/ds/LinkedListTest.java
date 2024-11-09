@@ -121,6 +121,7 @@ public class LinkedListTest {
 
         assertEquals(str1, list.getLast().getName()); list.pop();
         assertEquals(str1, list.getLast().getName());
+        
 
 
     }

@@ -1,4 +1,4 @@
-package br.com.ds.example;
+package br.com.ds.queue.example;
 
 import br.com.ds.queue.Queue;
 

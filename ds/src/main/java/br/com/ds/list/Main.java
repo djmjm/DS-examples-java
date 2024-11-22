@@ -29,5 +29,9 @@ public class Main {
             list.getLast().print()
         );
 
+        System.out.println(
+            list.getSize()
+        );
+
     }
 }

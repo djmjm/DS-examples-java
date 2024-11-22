@@ -2,11 +2,13 @@ package br.com.ds.list;
 
 public class LinkedList {
     private Element start;
+    private int size;
 
     public boolean push(Element elem){
         try{
             elem.setNext(start);
             start = elem;
+            size++;
             return true;
         }catch(Exception e){
             return false;
@@ -21,6 +23,8 @@ public class LinkedList {
         Element elem = start;
         start = elem.getNext();
         elem.setNext(null);
+
+        size--;
 
         return elem;
 
@@ -51,5 +55,11 @@ public class LinkedList {
     public boolean isEmpty(){
         return start == null;
     }
+
+    public int getSize() {
+        return size;
+    }
+
+    
 
 }

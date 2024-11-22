@@ -2,6 +2,7 @@ package br.com.ds.list;
 
 public class LinkedList {
     private Element start;
+    private Element end;
     private int size;
 
     public boolean push(Element elem){
@@ -9,6 +10,7 @@ public class LinkedList {
             elem.setNext(start);
             start = elem;
             size++;
+            end = getLast();
             return true;
         }catch(Exception e){
             return false;
@@ -59,6 +61,12 @@ public class LinkedList {
     public int getSize() {
         return size;
     }
+
+    public Element getEnd() {
+        return end;
+    }
+
+    
 
     
 

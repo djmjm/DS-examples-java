@@ -33,5 +33,9 @@ public class Main {
             list.getSize()
         );
 
+        System.out.println(
+            list.getEnd().print()
+        );
+
     }
 }

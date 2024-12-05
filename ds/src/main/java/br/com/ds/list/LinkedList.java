@@ -54,6 +54,25 @@ public class LinkedList {
         return elem;
     }
 
+    public Element find(String id){
+        if(isEmpty()){
+            return null;
+        }
+
+        Element elem = start;
+
+        while(elem != null
+        ){
+            if(id == elem.getId()){
+                return elem;
+            }
+
+            elem = elem.getNext();
+        }
+
+        return null;
+    }
+
     public boolean isEmpty(){
         return start == null;
     }

@@ -37,5 +37,18 @@ public class Main {
             list.getEnd().print()
         );
 
+        
+        System.out.println(
+            list.find(
+                list.getLast().getId()
+            ).print()
+        );
+
+        System.out.println(
+            list.find(
+                list.getFirst().getId()
+            ).print()
+        );
+
     }
 }

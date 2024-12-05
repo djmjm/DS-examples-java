@@ -125,6 +125,24 @@ public class LinkedListTest {
 
 
     }
+    @Test
+    void findTest(){
+        assertTrue(list.isEmpty());
+
+        String strTrue = "true";
+        Element elementTrue = new Element(strTrue);
+
+        assertTrue(list.push( new Element("test")  ));
+        assertTrue(list.push( elementTrue  ));
+
+        assertEquals(
+            elementTrue
+            , 
+            list.find( elementTrue.getId() )
+            );
+
+
+    }
 
     
 }

@@ -78,20 +78,34 @@ public class LinkedList {
 
             if(pos < 1){ return false; };
 
+            if(pos == 1){
+                elemNew.setNext(start);
+                start = elemNew;
+
+                size++;
+                return true;
+            }
+
             Element elem = start;
 
-            while(pos > 1
+            while(pos > 2
             ){
                 if(elem == null){ break;}
-                
+
                 elem = elem.getNext();
                 pos--;
             }
 
+            elemNew.setNext(
+                elem.getNext()
+            );
             elem.setNext(
                 elemNew
             );
 
+            end = getLast();
+
+            size++;
             return true;
         }catch(Exception e){
             return false;

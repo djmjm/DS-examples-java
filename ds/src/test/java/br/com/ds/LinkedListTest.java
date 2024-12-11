@@ -144,5 +144,25 @@ public class LinkedListTest {
 
     }
 
+    @Test
+    void insertTest(){
+        assertTrue(list.isEmpty());
+
+        String strInsert = "insertTwo";
+        Element elementInsert = new Element(strInsert);
+
+        assertTrue(list.push(new Element("Hello World")));
+        assertTrue(list.push(new Element("Final World")));
+        assertTrue(list.insert(elementInsert, 2));
+
+        assertEquals(3, list.getSize());
+
+        assertEquals("Hello World", list.getLast().getName());
+        assertEquals("Final World", list.getFirst().getName());
+        assertEquals("insertTwo", list.find(elementInsert.getId()).getName());
+
+
+    }
+
     
 }

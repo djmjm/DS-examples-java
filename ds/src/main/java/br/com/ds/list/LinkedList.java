@@ -73,6 +73,33 @@ public class LinkedList {
         return null;
     }
 
+    public boolean insert(Element elemNew, int pos){
+        try{
+
+            if(pos < 1){ return false; };
+
+            Element elem = start;
+
+            while(pos > 1
+            ){
+                if(elem == null){ break;}
+                
+                elem = elem.getNext();
+                pos--;
+            }
+
+            elem.setNext(
+                elemNew
+            );
+
+            return true;
+        }catch(Exception e){
+            return false;
+        }
+
+
+    }
+
     public boolean isEmpty(){
         return start == null;
     }

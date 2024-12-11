@@ -50,5 +50,28 @@ public class Main {
             ).print()
         );
 
+        Element elemInsertTwo = new Element("InsertTwo");
+
+        System.out.println(
+            list.insert(
+                elemInsertTwo,
+                2
+            )
+        );
+
+        System.out.println(
+            list.getSize()
+        );
+
+        System.out.println(
+            list.getLast().print()
+        );
+
+        System.out.println(
+            list.find(
+                elemInsertTwo.getId()
+            ).print()
+        );
+
     }
 }

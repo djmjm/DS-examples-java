@@ -101,6 +101,24 @@ public class Main {
             doublyList.getFirst().print()
         );
 
+        System.out.println(
+            doublyList.getSize()
+        );
+
+        doublyList.pushBack(new ElementBack("WORLD"));
+
+        System.out.println(
+            doublyList.getSize()
+        );
+
+        System.out.println(
+            doublyList.getEnd().getName()
+        );
+
+        System.out.println(
+            doublyList.getFirst().getName()
+        );
+
 
     }
 }

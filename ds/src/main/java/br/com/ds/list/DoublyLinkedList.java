@@ -5,6 +5,22 @@ public class DoublyLinkedList {
     private ElementBack end;
     private int size;
 
+    public boolean pushBack(ElementBack elem){
+
+        if(end == null){
+            start = elem;
+            end = elem;
+        }else{
+            elem.setBack(end);
+            end.setNext(elem);
+            
+            end = elem;
+        }
+
+        size++;
+        return true;
+    }
+
     public boolean pushFirst(ElementBack elem){
 
         if(start == null){
@@ -18,6 +34,7 @@ public class DoublyLinkedList {
             start = elem;
         }
 
+        size++;
         return true;
     }
 

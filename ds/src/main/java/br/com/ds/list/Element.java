@@ -4,9 +4,9 @@ import java.util.UUID;
 
 public class Element {
 
-    private String id;
-    private String name;
-    private Element next;
+    protected String id;
+    protected String name;
+    protected Element next;
 
     public Element(String name){
         this.name = name;

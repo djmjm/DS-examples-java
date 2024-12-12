@@ -93,5 +93,14 @@ public class Main {
             )
         );
 
+        DoublyLinkedList doublyList = new DoublyLinkedList();
+        ElementBack elemBack = new ElementBack("HELLO");
+        doublyList.pushFirst(elemBack);
+        
+        System.out.println(
+            doublyList.getFirst().print()
+        );
+
+
     }
 }

@@ -7,16 +7,20 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import br.com.ds.list.DoublyLinkedList;
 import br.com.ds.list.Element;
+import br.com.ds.list.ElementBack;
 import br.com.ds.list.LinkedList;
 
 
 public class LinkedListTest {
     private LinkedList list;
+    private DoublyLinkedList doublyList;
     
     @BeforeEach
     void setup(){
         list = new LinkedList();
+        doublyList = new DoublyLinkedList();
     }
 
     @Test
@@ -184,6 +188,26 @@ public class LinkedListTest {
         assertTrue(list.remove(2));
 
         assertEquals(null, list.find(elementInsert.getId()));
+    }
+
+    @Test
+    void pushFirst(){
+        assertTrue(doublyList.isEmpty());
+
+        String strInsertBack = "back";
+        ElementBack elementInsertBack = new ElementBack(strInsertBack);
+        String strInsertFirst = "first";
+        ElementBack elementInsertFirst = new ElementBack(strInsertFirst);
+
+        assertEquals(true, doublyList.pushBack(elementInsertBack));
+        assertEquals(1, doublyList.getSize());
+
+        assertEquals(true, doublyList.pushFirst(elementInsertFirst));
+        assertEquals(2, doublyList.getSize());
+
+        assertEquals(strInsertBack, doublyList.getEnd().getName());
+        assertEquals(strInsertFirst, doublyList.getFirst().getName());
+
     }
 
     

@@ -114,6 +114,32 @@ public class LinkedList {
 
     }
 
+    public boolean remove(int pos){
+        if(pos < 1){ return false; }
+
+        Element elem = start;
+
+        while(pos > 2){
+            if(elem.getNext() == null){
+                break;
+            }
+            pos--;
+            elem = elem.getNext();
+        }
+
+        if(elem.getNext() == null){
+            end = null;
+            end = getLast();
+        }
+        else{
+            elem.setNext(
+                elem.getNext().getNext()
+            );
+        }
+
+        return true;
+    }
+
     public boolean isEmpty(){
         return start == null;
     }

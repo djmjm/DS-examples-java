@@ -73,5 +73,25 @@ public class Main {
             ).print()
         );
 
+        System.out.println(
+            list.getSize()
+        );
+
+        System.out.println(
+            list.find(
+                elemInsertTwo.getId()
+            ).print()
+        );
+
+        System.out.println(
+            list.remove(2)
+        );
+
+        System.out.println(
+            list.find(
+                elemInsertTwo.getId()
+            )
+        );
+
     }
 }

@@ -119,6 +119,20 @@ public class Main {
             doublyList.getFirst().getName()
         );
 
+        System.out.println(
+            doublyList.removeFirst()
+        );
+
+        System.out.println(doublyList.getSize());
+
+        System.out.println(
+            doublyList.removeFirst()
+        );
+
+        System.out.println(doublyList.getSize());
+
+        System.out.println(doublyList.removeFirst());
+
 
     }
 }

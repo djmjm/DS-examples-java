@@ -5,6 +5,21 @@ public class DoublyLinkedList {
     private ElementBack end;
     private int size;
 
+
+    public boolean removeFirst(){
+        if(size == 0){ return false; };
+        if(size == 1){
+            start = null;
+            end = null;
+            size--;
+            return true;
+        }
+        
+        start = (ElementBack) start.getNext();
+        size--;
+        return true;
+    }
+
     public boolean pushBack(ElementBack elem){
 
         if(end == null){

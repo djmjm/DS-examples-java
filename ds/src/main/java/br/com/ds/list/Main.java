@@ -124,7 +124,7 @@ public class Main {
         );
 
         System.out.println(
-            doublyList.find(
+            doublyList.findBack(
                 elemBack.getId()
             )
         );
@@ -140,7 +140,7 @@ public class Main {
         System.out.println(doublyList.removeFirst());
 
         System.out.println(
-            doublyList.find(
+            doublyList.findBack(
                 elemBack.getId()
             )
         );

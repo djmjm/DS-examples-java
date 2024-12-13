@@ -120,13 +120,13 @@ public class Main {
         );
 
         System.out.println(
-            doublyList.removeFirst()
+            doublyList.removeBack()
         );
 
         System.out.println(doublyList.getSize());
 
         System.out.println(
-            doublyList.removeFirst()
+            doublyList.removeBack()
         );
 
         System.out.println(doublyList.getSize());

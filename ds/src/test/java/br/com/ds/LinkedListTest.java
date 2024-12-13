@@ -191,7 +191,7 @@ public class LinkedListTest {
     }
 
     @Test
-    void pushFirst(){
+    void pushFirstBack(){
         assertTrue(doublyList.isEmpty());
 
         String strInsertBack = "back";

@@ -41,6 +41,7 @@ public class DoublyLinkedList {
         }
 
         end = (ElementBack) end.getBack();
+        end.setNext(null);
         size--;
         return true;
     }
@@ -55,6 +56,7 @@ public class DoublyLinkedList {
         }
         
         start = (ElementBack) start.getNext();
+        start.setBack(null);
         size--;
         return true;
     }

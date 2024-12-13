@@ -248,5 +248,43 @@ public class LinkedListTest {
         assertFalse(doublyList.removeFirst());
     }
 
+    @Test
+    void removeBack(){
+        assertTrue(doublyList.isEmpty());
+
+        String strOne = "One";
+        ElementBack elementOne = new ElementBack(strOne);
+
+        String strTwo = "Two";
+        ElementBack elementTwo = new ElementBack(strTwo);
+
+        String strThree = "Three";
+        ElementBack elementThree = new ElementBack(strThree);
+
+        doublyList.pushBack(elementOne);
+        doublyList.pushBack(elementTwo);
+        doublyList.pushBack(elementThree);
+
+        assertEquals(strOne, doublyList.getFirst().getName());
+        assertEquals(strThree, doublyList.getEnd().getName());
+
+        assertTrue(doublyList.removeBack());
+
+        assertEquals(strOne, doublyList.getFirst().getName());
+        assertEquals(strTwo, doublyList.getEnd().getName());
+
+        assertTrue(doublyList.removeBack());
+
+        assertEquals(strOne, doublyList.getFirst().getName());
+        assertEquals(strOne, doublyList.getEnd().getName());
+
+        assertTrue(doublyList.removeBack());
+
+        assertEquals(null, doublyList.getFirst());
+        assertEquals(null, doublyList.getEnd());
+
+        assertFalse(doublyList.removeBack());
+    }
+
     
 }

@@ -123,6 +123,12 @@ public class Main {
             doublyList.removeBack()
         );
 
+        System.out.println(
+            doublyList.find(
+                elemBack.getId()
+            )
+        );
+
         System.out.println(doublyList.getSize());
 
         System.out.println(
@@ -132,6 +138,12 @@ public class Main {
         System.out.println(doublyList.getSize());
 
         System.out.println(doublyList.removeFirst());
+
+        System.out.println(
+            doublyList.find(
+                elemBack.getId()
+            )
+        );
 
 
     }

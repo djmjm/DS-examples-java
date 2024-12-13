@@ -5,6 +5,19 @@ public class DoublyLinkedList {
     private ElementBack end;
     private int size;
 
+    public boolean find(String id){
+        ElementBack elemIter = start;
+
+        while(elemIter != null){
+            if(id == elemIter.getId()){
+                return true;
+            }
+            elemIter = (ElementBack) elemIter.getNext();
+        }
+
+        return false;
+    }
+
     public boolean removeBack(){
         if(size == 0){ return false; };
         if(size == 1){

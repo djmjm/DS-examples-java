@@ -315,5 +315,34 @@ public class LinkedListTest {
         assertTrue(doublyList.isEmpty());
     }
 
+    @Test
+    void findBackDoubly(){
+        assertTrue(doublyList.isEmpty());
+
+        String str1 = "one";
+        String str2 = "two";
+
+        ElementBack elem1 = new ElementBack(str1);
+        ElementBack elem2 = new ElementBack(str2);
+
+        assertTrue(doublyList.pushFirst(elem1));
+        assertTrue(doublyList.pushBack(elem2));
+
+        assertTrue(doublyList.findBack(elem1.getId()));
+        assertTrue(doublyList.findBack(elem2.getId()));
+
+        assertTrue(doublyList.removeFirst());
+
+        assertFalse(doublyList.findBack(elem1.getId()));
+        assertTrue(doublyList.findBack(elem2.getId()));
+
+        assertTrue(doublyList.removeFirst());
+
+        assertFalse(doublyList.findBack(elem1.getId()));
+        assertFalse(doublyList.findBack(elem2.getId()));
+
+        assertTrue(doublyList.isEmpty());
+    }
+
     
 }

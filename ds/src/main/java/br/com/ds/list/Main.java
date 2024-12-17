@@ -145,6 +145,30 @@ public class Main {
             )
         );
 
+        CircularDoublyLinkedList circularList = new CircularDoublyLinkedList();
+
+        System.out.println(circularList.isEmpty());
+        System.out.println(circularList.getSize());
+
+        ElementBack circularListElem = new ElementBack("CIRCULAR LIST");
+        System.out.println(
+            circularList.insertClockwise(circularListElem, 10)
+        );
+        System.out.println(
+            circularList.getSize()
+        );
+
+        System.out.println(
+            circularList.findClockwise(
+                circularListElem.getId()
+            )
+        );
+
+        System.out.println(
+            circularList.findCounterClockwise(
+                circularListElem.getId()
+            )
+        );
 
     }
 }

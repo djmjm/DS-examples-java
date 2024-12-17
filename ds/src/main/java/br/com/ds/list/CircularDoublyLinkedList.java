@@ -33,5 +33,21 @@ public class CircularDoublyLinkedList {
         return false;
     }
 
-    
+    public Element getFirst(){
+        return start;
+    }
+
+    public boolean isEmpty(){
+        return start == null;
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    public Element getEnd() {
+        return end;
+    }
+
+
 }

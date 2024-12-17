@@ -5,6 +5,34 @@ public class CircularDoublyLinkedList {
     private ElementBack end;
     private int size;
 
+    boolean insertCounterCounterClockwise(ElementBack elem, int pos){
+        if(size == 0){
+            start = elem;
+
+            start.setBack(start);
+            start.setNext(start);
+
+            return true;
+        }
+
+        ElementBack elemIter = (ElementBack) elem.getNext();
+
+        while(pos > 0){
+            elemIter = (ElementBack) elemIter.getNext();
+            pos--;
+        }
+
+        ElementBack swapNext = ( (ElementBack) elemIter.getNext() );
+        
+        swapNext.setBack(elem);
+        elemIter.setNext(elem);
+
+        elem.setBack(elemIter.getBack());
+        elem.setNext(swapNext);
+
+        return true;
+    }
+
     boolean insertClockwise(ElementBack elem, int pos){
         if(size == 0){
             start = elem;

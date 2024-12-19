@@ -43,12 +43,19 @@ public class CircularDoublyLinkedList {
             return true;
         }
 
-        ElementBack swapNext = ( (ElementBack) start.getNext() );
+        ElementBack elemIter = (ElementBack) elem.getNext();
+
+        while(pos > 0){
+            elemIter = (ElementBack) elemIter.getNext();
+            pos--;
+        }
+
+        ElementBack swapNext = ( (ElementBack) elemIter.getNext() );
         
         swapNext.setBack(elem);
-        start.setNext(elem);
+        elemIter.setNext(elem);
 
-        elem.setBack(start);
+        elem.setBack(elemIter);
         elem.setNext(swapNext);
 
         return true;

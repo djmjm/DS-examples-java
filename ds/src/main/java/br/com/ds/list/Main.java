@@ -170,5 +170,24 @@ public class Main {
             )
         );
 
+        CircularDoublyLinkedList newListCircular = new CircularDoublyLinkedList();
+
+        ElementBack newElemCircularDoubly = new ElementBack("CIRCULAR LIST");
+
+        System.out.println(
+            newListCircular.insertCounterCounterClockwise(
+                newElemCircularDoubly, 100)
+        );
+
+        System.out.println(
+            newListCircular.findCounterClockwise("dhsudhus")
+        );
+
+        System.out.println(
+            newListCircular.findCounterClockwise(
+                newElemCircularDoubly.getId()
+            )
+        );
+
     }
 }

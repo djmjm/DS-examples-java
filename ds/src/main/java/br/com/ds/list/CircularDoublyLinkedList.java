@@ -18,7 +18,7 @@ public class CircularDoublyLinkedList {
         ElementBack elemIter = (ElementBack) elem.getNext();
 
         while(pos > 0){
-            elemIter = (ElementBack) elemIter.getNext();
+            elemIter = (ElementBack) elemIter.getBack();
             pos--;
         }
 

@@ -7,6 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import br.com.ds.list.CircularDoublyLinkedList;
 import br.com.ds.list.DoublyLinkedList;
 import br.com.ds.list.Element;
 import br.com.ds.list.ElementBack;
@@ -16,11 +17,13 @@ import br.com.ds.list.LinkedList;
 public class LinkedListTest {
     private LinkedList list;
     private DoublyLinkedList doublyList;
+    private CircularDoublyLinkedList circularList;
     
     @BeforeEach
     void setup(){
         list = new LinkedList();
         doublyList = new DoublyLinkedList();
+        circularList = new CircularDoublyLinkedList();
     }
 
     @Test
@@ -342,6 +345,28 @@ public class LinkedListTest {
         assertFalse(doublyList.findBack(elem2.getId()));
 
         assertTrue(doublyList.isEmpty());
+    }
+
+    @Test
+    void insertClockwise(){
+        assertTrue(circularList.isEmpty());
+
+        ElementBack elemInsertOne = new ElementBack("ONE");
+        ElementBack elemInsertTwo = new ElementBack("TWO");
+        ElementBack elemInsertThree = new ElementBack("THREE");
+
+        assertTrue(circularList.insertClockwise(elemInsertOne, 1));
+        assertTrue(circularList.insertCounterClockwise(elemInsertThree, 1));
+        assertTrue(circularList.insertClockwise(elemInsertTwo, 0));
+
+        assertEquals(
+           elemInsertThree.getName() ,circularList.getEnd().getName()
+        );
+
+        assertEquals(
+           elemInsertTwo.getName() ,circularList.getFirst().getName()
+        );
+
     }
 
     

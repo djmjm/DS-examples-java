@@ -175,7 +175,7 @@ public class Main {
         ElementBack newElemCircularDoubly = new ElementBack("CIRCULAR LIST");
 
         System.out.println(
-            newListCircular.insertCounterCounterClockwise(
+            newListCircular.insertCounterClockwise(
                 newElemCircularDoubly, 100)
         );
 

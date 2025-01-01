@@ -7,7 +7,7 @@ public class List {
     LinkedList<Element> elements;
 
     public List(){
-        elements = new LinkedList();
+        elements = new LinkedList<Element>();
     }
 
     public boolean pushBack(Element elem){

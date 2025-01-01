@@ -193,9 +193,17 @@ public class Main {
 
         Element elemDefaultOne = new Element("1");
         Element elemDefaultTwo = new Element("2");
+        Element elemDefaultThree = new Element("3");
 
         System.out.println(listDefault.pushBack(elemDefaultTwo));
         System.out.println(listDefault.pushBack(elemDefaultOne));
+
+        System.out.println(listDefault.getSize());
+
+        System.out.println(listDefault.find(elemDefaultThree));
+        System.out.println(listDefault.find(elemDefaultOne));
+        System.out.println(listDefault.find(elemDefaultTwo));
+
 
     }
 }

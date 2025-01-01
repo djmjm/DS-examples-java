@@ -31,5 +31,17 @@ public class List {
 
         return true;
     }
+
+    public boolean find(Element elem){
+        if(elements.contains(elem)){
+            return true;
+        }
+
+        return false;
+    }
+
+    public int getSize(){
+        return elements.size();
+    }
     
 }

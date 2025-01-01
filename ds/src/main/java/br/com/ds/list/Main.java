@@ -189,5 +189,13 @@ public class Main {
             )
         );
 
+        List listDefault = new List();
+
+        Element elemDefaultOne = new Element("1");
+        Element elemDefaultTwo = new Element("2");
+
+        System.out.println(listDefault.pushBack(elemDefaultTwo));
+        System.out.println(listDefault.pushBack(elemDefaultOne));
+
     }
 }

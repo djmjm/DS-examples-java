@@ -195,6 +195,8 @@ public class Main {
         Element elemDefaultTwo = new Element("2");
         Element elemDefaultThree = new Element("3");
 
+        System.out.println(listDefault.isEmpty() + " LIST EMPTY");
+
         System.out.println(listDefault.pushBack(elemDefaultTwo));
         System.out.println(listDefault.pushBack(elemDefaultOne));
 
@@ -207,6 +209,8 @@ public class Main {
         System.out.println(listDefault.remove(elemDefaultThree));
         System.out.println(listDefault.remove(elemDefaultOne));
         System.out.println(listDefault.find(elemDefaultOne));
+
+        System.out.println(listDefault.isEmpty() + " LIST EMPTY");
 
 
     }

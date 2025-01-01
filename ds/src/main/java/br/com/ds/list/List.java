@@ -55,5 +55,9 @@ public class List {
     public int getSize(){
         return elements.size();
     }
+
+    public boolean isEmpty(){
+        return elements.size() == 0;
+    }
     
 }

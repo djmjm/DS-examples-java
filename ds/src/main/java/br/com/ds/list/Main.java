@@ -204,6 +204,10 @@ public class Main {
         System.out.println(listDefault.find(elemDefaultOne));
         System.out.println(listDefault.find(elemDefaultTwo));
 
+        System.out.println(listDefault.remove(elemDefaultThree));
+        System.out.println(listDefault.remove(elemDefaultOne));
+        System.out.println(listDefault.find(elemDefaultOne));
+
 
     }
 }

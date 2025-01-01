@@ -33,11 +33,23 @@ public class List {
     }
 
     public boolean find(Element elem){
-        if(elements.contains(elem)){
-            return true;
+        try{
+            return elements.contains(elem);
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+            return false;
         }
 
-        return false;
+    }
+
+    public boolean remove(Element elem){
+        try{
+            return elements.remove(elem);
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+            return false;
+        }
+
     }
 
     public int getSize(){

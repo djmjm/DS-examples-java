@@ -17,14 +17,14 @@ public class Hash {
         size = 0;
     }
 
-    private int hash(long number){
+    private int hash(Element elem){
+        BigInteger numberFirst = new BigInteger(elem.getId().replace("-", ""), 16);
+        long number = Math.abs(numberFirst.longValue());
         return (int) (number % maxSize);
     }
 
     public boolean put(Element elem){
-        BigInteger numberFirst = new BigInteger(elem.getId().replace("-", ""), 16);
-        long number = Math.abs(numberFirst.longValue());
-        int key = hash(number);
+        int key = hash(elem);
 
         for(int i = key; i < maxSize; i++){
             if(table[i] == null){
@@ -43,6 +43,34 @@ public class Hash {
         }
 
         return false;
+    }
+
+    public boolean find(Element elem){
+        int key = hash(elem);
+
+        for(int i = key; i < maxSize; i++){
+            if(table[i] != null){
+                if(elem.getId() == table[i].getId()){
+                    return true;
+                }
+            }else{
+                break;
+            }
+        }
+
+        for(int i = key; i >= 0; i--){
+            if(table[i] != null){
+                if(elem.getId() == table[i].getId()){
+                    return true;
+                }
+            }else{
+                break;
+            }
+        }
+
+
+        return false;
+
     }
 
     public int getMaxSize() {

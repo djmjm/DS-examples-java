@@ -102,6 +102,9 @@ public class Hash {
         return false;
 
     }
+    public Element get(int key){
+        return table[key];
+    }
 
     public int getMaxSize() {
         return maxSize;

@@ -30,5 +30,8 @@ public class Main {
         System.out.println(hash.remove(HelloWorld));
 
         System.out.println( hash.find(HelloWorld));
+
+        System.out.println(hash.get(0));
+        System.out.println(hash.get(1));
     }
 }

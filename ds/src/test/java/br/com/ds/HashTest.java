@@ -35,5 +35,20 @@ public class HashTest {
         ));
         assertEquals(10, hash.getSize());
     }
+
+    @Test
+    void testFind(){
+        assertEquals(0, hash.getSize());
+
+        Element one = new Element("one");
+        Element two = new Element("two");
+
+        assertTrue(hash.put(one));
+
+        assertTrue(hash.find(one));
+        assertFalse(hash.find(two));
+
+        assertEquals(1, hash.getSize());
+    }
     
 }

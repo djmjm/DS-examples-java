@@ -76,5 +76,21 @@ public class HashTest {
 
         assertEquals(0, hash.getSize());
     }
+
+    @Test
+    void testGet(){
+        assertEquals(0, hash.getSize());
+
+        Element elem = new Element("ONE");
+
+        for(int i = 0; i < hash.getMaxSize(); i++){
+            hash.put(elem);
+        }
+
+        for(int i = 0; i < hash.getMaxSize(); i++){
+            assertEquals(elem.getId(), hash.get(i).getId());
+        }
+
+    }
     
 }

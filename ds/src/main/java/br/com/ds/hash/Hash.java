@@ -1,5 +1,8 @@
 package br.com.ds.hash;
 
+import java.math.BigInteger;
+import java.lang.Math;
+
 import br.com.ds.list.Element;
 
 public class Hash {
@@ -12,5 +15,31 @@ public class Hash {
 
         this.maxSize = maxSize;
         size = 0;
+    }
+
+    private int hash(long number){
+        return (int) (number % maxSize);
+    }
+
+    public int put(Element elem){
+        BigInteger numberFirst = new BigInteger(elem.getId().replace("-", ""), 16);
+        long number = Math.abs(numberFirst.longValue());
+        int key = hash(number);
+
+        for(int i = key; i < maxSize; i++){
+            if(table[i] == null){
+                table[i] = elem;
+                return i;
+            }
+        }
+
+        for(int i = key; i >= 0; i--){
+            if(table[i] == null){
+                table[i] = elem;
+                return i;
+            }
+        }
+
+        return -1;
     }
 }

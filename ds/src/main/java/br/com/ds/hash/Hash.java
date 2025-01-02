@@ -21,7 +21,7 @@ public class Hash {
         return (int) (number % maxSize);
     }
 
-    public int put(Element elem){
+    public boolean put(Element elem){
         BigInteger numberFirst = new BigInteger(elem.getId().replace("-", ""), 16);
         long number = Math.abs(numberFirst.longValue());
         int key = hash(number);
@@ -30,7 +30,7 @@ public class Hash {
             if(table[i] == null){
                 table[i] = elem;
                 size++;
-                return i;
+                return true;
             }
         }
 
@@ -38,11 +38,11 @@ public class Hash {
             if(table[i] == null){
                 table[i] = elem;
                 size++;
-                return i;
+                return true;
             }
         }
 
-        return -1;
+        return false;
     }
 
     public int getMaxSize() {

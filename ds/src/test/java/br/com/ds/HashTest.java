@@ -24,13 +24,13 @@ public class HashTest {
         assertEquals(0, hash.getSize());
 
         for(int i = 0; i < hash.getMaxSize(); i++){
-            assertNotEquals(-1, hash.put(
+            assertNotEquals(false, hash.put(
                 new Element("TEST")
             ));
             assertEquals(i+1, hash.getSize());
         }
 
-        assertEquals(-1, hash.put(
+        assertEquals(false, hash.put(
             new Element("TEST")
         ));
         assertEquals(10, hash.getSize());

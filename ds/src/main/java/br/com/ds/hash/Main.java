@@ -7,9 +7,15 @@ public class Main {
         Element HelloWorld = new Element("Hello World");
         Hash hash = new Hash(2);
 
+        System.out.println( hash.getSize() );
+        System.out.println( hash.getMaxSize() );
+
         System.out.println( hash.put(HelloWorld) );
         System.out.println( hash.put(HelloWorld) );
         System.out.println( hash.put(HelloWorld) );
         System.out.println( hash.put(HelloWorld) );
+
+        System.out.println( hash.getSize() );
+        System.out.println( hash.getMaxSize() );
     }
 }

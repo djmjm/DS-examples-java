@@ -50,5 +50,31 @@ public class HashTest {
 
         assertEquals(1, hash.getSize());
     }
+
+    @Test
+    void testRemove(){
+        assertEquals(0, hash.getSize());
+
+        Element one = new Element("one");
+        Element two = new Element("two");
+
+        assertTrue(hash.put(one));
+        assertTrue(hash.put(two));
+
+        assertTrue(hash.find(one));
+        assertTrue(hash.find(two));
+
+        assertEquals(2, hash.getSize());
+
+        assertTrue(hash.remove(two));
+        assertFalse(hash.find(two));
+
+        assertEquals(1, hash.getSize());
+
+        assertTrue(hash.remove(one));
+        assertFalse(hash.find(one));
+
+        assertEquals(0, hash.getSize());
+    }
     
 }

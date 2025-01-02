@@ -80,6 +80,7 @@ public class Hash {
             if(table[i] != null){
                 if(elem.getId() == table[i].getId()){
                     table[i] = null;
+                    size--;
                     return true;
                 }
             }else{
@@ -91,6 +92,7 @@ public class Hash {
             if(table[i] != null){
                 if(elem.getId() == table[i].getId()){
                     table[i] = null;
+                    size--;
                     return true;
                 }
             }else{

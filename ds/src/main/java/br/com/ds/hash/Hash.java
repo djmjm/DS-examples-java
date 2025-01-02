@@ -29,6 +29,7 @@ public class Hash {
         for(int i = key; i < maxSize; i++){
             if(table[i] == null){
                 table[i] = elem;
+                size++;
                 return i;
             }
         }
@@ -36,10 +37,22 @@ public class Hash {
         for(int i = key; i >= 0; i--){
             if(table[i] == null){
                 table[i] = elem;
+                size++;
                 return i;
             }
         }
 
         return -1;
     }
+
+    public int getMaxSize() {
+        return maxSize;
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    
+
 }

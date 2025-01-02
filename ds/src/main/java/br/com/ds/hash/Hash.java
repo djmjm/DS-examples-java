@@ -73,6 +73,36 @@ public class Hash {
 
     }
 
+    public boolean remove(Element elem){
+        int key = hash(elem);
+
+        for(int i = key; i < maxSize; i++){
+            if(table[i] != null){
+                if(elem.getId() == table[i].getId()){
+                    table[i] = null;
+                    return true;
+                }
+            }else{
+                break;
+            }
+        }
+
+        for(int i = key; i >= 0; i--){
+            if(table[i] != null){
+                if(elem.getId() == table[i].getId()){
+                    table[i] = null;
+                    return true;
+                }
+            }else{
+                break;
+            }
+        }
+
+
+        return false;
+
+    }
+
     public int getMaxSize() {
         return maxSize;
     }

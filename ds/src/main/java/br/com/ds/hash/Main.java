@@ -25,5 +25,10 @@ public class Main {
 
         System.out.println( hash.getSize() );
         System.out.println( hash.getMaxSize() );
+
+        System.out.println(hash.remove(HelloWorld));
+        System.out.println(hash.remove(HelloWorld));
+
+        System.out.println( hash.find(HelloWorld));
     }
 }

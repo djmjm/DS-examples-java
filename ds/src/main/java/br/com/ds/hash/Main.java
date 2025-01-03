@@ -33,5 +33,32 @@ public class Main {
 
         System.out.println(hash.get(0));
         System.out.println(hash.get(1));
+
+        HashChain chainingHash = new HashChain(10);
+        System.out.println(chainingHash.getSize());
+
+        System.out.println(chainingHash.put(HelloWorld));
+        System.out.println(chainingHash.put(HelloWorld));
+        System.out.println(chainingHash.put(HelloWorld));
+
+        System.out.println(chainingHash.getSize());
+
+        System.out.println(chainingHash.find(HelloWorld));
+        System.out.println(chainingHash.find(quit));
+        System.out.println(chainingHash.find(quit));
+
+        System.out.println(chainingHash.remove(HelloWorld));
+        System.out.println(chainingHash.getSize());
+
+        System.out.println(chainingHash.remove(HelloWorld));
+        System.out.println(chainingHash.getSize());
+
+        System.out.println(chainingHash.remove(HelloWorld));
+        System.out.println(chainingHash.getSize());
+
+        System.out.println(chainingHash.remove(HelloWorld));
+        System.out.println(chainingHash.getSize());
+
+        System.out.println(chainingHash.remove(quit));
     }
 }

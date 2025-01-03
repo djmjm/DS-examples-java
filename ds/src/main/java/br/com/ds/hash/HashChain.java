@@ -13,6 +13,9 @@ public class HashChain {
     @SuppressWarnings("unchecked")
     public HashChain(int maxSize){
         table = new LinkedList[maxSize];
+        for(int i = 0; i < maxSize; i++){
+            table[i] = new LinkedList<Element>();
+        }
 
         this.maxSize = maxSize;
         size = 0;
@@ -26,10 +29,16 @@ public class HashChain {
 
     public boolean put(Element elem){
 
-        int key = hash(elem);
-        table[key].push(elem);
+        try{
+            int key = hash(elem);
+            table[key].push(elem);
+            size++;
+            return true;
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+            return false;
+        }
 
-        return false;
     }
 
     public boolean find(Element elem){
@@ -48,7 +57,11 @@ public class HashChain {
     public boolean remove(Element elem){
 
         int key = hash(elem);
-        return table[key].remove(elem);
+        if(table[key].remove(elem)){
+            size--; return true;
+        }else{
+            return false;
+        }
 
     }
     public LinkedList<Element> get(int key){

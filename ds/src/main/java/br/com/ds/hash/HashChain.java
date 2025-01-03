@@ -65,7 +65,11 @@ public class HashChain {
 
     }
     public LinkedList<Element> get(int key){
-        return table[key];
+        if(table[key].size() != 0){
+            return table[key];
+        }
+
+        return null;
     }
 
     public int getMaxSize() {

@@ -25,19 +25,34 @@ public class HashChain {
     }
 
     public boolean put(Element elem){
+
+        int key = hash(elem);
+        table[key].push(elem);
+
         return false;
     }
 
     public boolean find(Element elem){
+
+        int key = hash(elem);
+
+        for(int i = 0; i < table[key].size(); i++){
+            if( table[key].get(i) == elem){
+                return true;
+            }
+        }
+
         return false;
     }
 
     public boolean remove(Element elem){
-        return false;
+
+        int key = hash(elem);
+        return table[key].remove(elem);
 
     }
-    public Element get(int key){
-        return  null;
+    public LinkedList<Element> get(int key){
+        return table[key];
     }
 
     public int getMaxSize() {

@@ -13,9 +13,9 @@ This repository contains practical examples of data structures implemented in Ja
 - [x] Deque
 - [x] Stack
 - [x] Linked List
+- [x] Hash Table
 
 ## To Be Implemented 📝
-- [ ] Hash Table
 - [ ] Binary Tree
 - [ ] AVL Tree
 - [ ] B Tree

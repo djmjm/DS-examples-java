@@ -6,21 +6,26 @@ public class Node {
 
     private int id;
     private Element content;
-    private Element child_left;
-    private Element child_right;
-    private Element parent;
+    private Node child_left;
+    private Node child_right;
+    private Node parent;
 
     public Node(Element content, int id){
         this.content = content;
+        this.id = id;
+
+        parent = null;
+        child_left = null;
+        child_right = null;
     }
 
-    public void setChild_left(Element child_left) {
+    public void setChild_left(Node child_left) {
         this.child_left = child_left;
     }
-    public void setChild_right(Element child_right) {
+    public void setChild_right(Node child_right) {
         this.child_right = child_right;
     }
-    public void setParent(Element parent) {
+    public void setParent(Node parent) {
         this.parent = parent;
     }
 
@@ -30,13 +35,13 @@ public class Node {
     public Element getContent() {
         return content;
     }
-    public Element getChild_left() {
+    public Node getChild_left() {
         return child_left;
     }
-    public Element getChild_right() {
+    public Node getChild_right() {
         return child_right;
     }
-    public Element getParent() {
+    public Node getParent() {
         return parent;
     }
 

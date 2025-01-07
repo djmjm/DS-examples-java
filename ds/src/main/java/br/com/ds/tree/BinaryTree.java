@@ -1,5 +1,6 @@
 package br.com.ds.tree;
 
+import java.util.LinkedList;
 import java.util.Stack;
 
 import br.com.ds.list.Element;
@@ -11,6 +12,7 @@ public class BinaryTree {
     private int size;
 
     private Stack<String> stackPrinting;
+    private LinkedList<String> queuePrinting;
     
     public BinaryTree(){
         idGenerator = new UniqueRandom(10);
@@ -18,6 +20,7 @@ public class BinaryTree {
         size = 0;
 
         stackPrinting = new Stack<String>();
+        queuePrinting = new LinkedList<String>();
     }
 
     public boolean insert(Element elem){
@@ -65,8 +68,20 @@ public class BinaryTree {
         while(!stackPrinting.isEmpty()){
             result += stackPrinting.pop() + " - ";
         }
-        
 
+        return result;
+    }
+
+    public String printInOrder(){
+        Node nodeIter = start;
+        String result = "";
+
+        System.out.println(queuePrinting.size());
+        traverseInOrder(nodeIter);
+        while(!queuePrinting.isEmpty()){
+            result += queuePrinting.poll() + " - ";
+        }
+        
         return result;
     }
 
@@ -88,6 +103,18 @@ public class BinaryTree {
         }
 
         stackPrinting.push( node.getContent().getName() + " id(" + node.getId() + ")");
+        return node;
+    }
+
+    private Node traverseInOrder(Node node){
+        if(node.getChild_left() != null){ 
+            traverseInOrder(node.getChild_left());
+        }
+        if(node.getChild_right() != null){ 
+            traverseInOrder(node.getChild_right());
+        }
+
+        queuePrinting.add( node.getContent().getName() + " id(" + node.getId() + ")");
         return node;
     }
 }

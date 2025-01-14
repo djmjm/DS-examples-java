@@ -1,6 +1,8 @@
 package br.com.ds.tree;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Stack;
 
 import br.com.ds.list.Element;
@@ -63,10 +65,12 @@ public class BinaryTree {
     public String printWidth(){
         Node nodeIter = start;
         String result = "";
+        List<Node> list = new ArrayList<Node>();
+        list.add(nodeIter);
 
-        traverseWidth(nodeIter);
-        while(!stackPrinting.isEmpty()){
-            result += stackPrinting.pop() + " - ";
+        traverseWidth(list);
+        while(!queuePrinting.isEmpty()){
+            result += queuePrinting.poll() + " - ";
         }
 
         return result;
@@ -91,26 +95,32 @@ public class BinaryTree {
         return size;
     }
 
-    private Node traverseWidth(Node node){
+    private List<Node> traverseWidth(List<Node> nodes){ 
+        
+        List<Node> nextLevel = new ArrayList<Node>();
 
+        if(nodes.isEmpty()){ return null;};
+
+        for(Node node: nodes){
             
+            queuePrinting.add( node.getContent().getName() + " id(" + node.getId() + ")");
 
-        if(node.getChild_left() != null){ 
-            traverseWidth(node.getChild_left());
-        }
-        if(node.getChild_right() != null){ 
-            traverseWidth(node.getChild_right());
+            if(node.getChild_left() != null){ 
+                nextLevel.add( node.getChild_left());
+            }
+            if(node.getChild_right() != null){ 
+                nextLevel.add(node.getChild_right());
+            }
         }
 
-        stackPrinting.push( node.getContent().getName() + " id(" + node.getId() + ")");
-        return node;
+        return traverseWidth(nextLevel);
     }
 
     private Node traverseInOrder(Node node){
         if(node.getChild_left() != null){ 
             traverseInOrder(node.getChild_left());
         }
-        
+
         queuePrinting.add( node.getContent().getName() + " id(" + node.getId() + ")");
 
         if(node.getChild_right() != null){ 

@@ -110,11 +110,13 @@ public class BinaryTree {
         if(node.getChild_left() != null){ 
             traverseInOrder(node.getChild_left());
         }
+        
+        queuePrinting.add( node.getContent().getName() + " id(" + node.getId() + ")");
+
         if(node.getChild_right() != null){ 
             traverseInOrder(node.getChild_right());
         }
 
-        queuePrinting.add( node.getContent().getName() + " id(" + node.getId() + ")");
         return node;
     }
 }

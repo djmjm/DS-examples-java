@@ -11,6 +11,10 @@ public class Main {
         System.out.println(tree.insert(new Element("Jake")));
         System.out.println(tree.insert(new Element("Bidu")));
         System.out.println(tree.insert(new Element("Uchira")));
+        System.out.println(tree.insert(new Element("Pirata")));
+        System.out.println(tree.insert(new Element("Cachorro")));
+        System.out.println(tree.insert(new Element("Gato")));
+        System.out.println(tree.insert(new Element("Vira lata")));
 
         System.out.println(tree.getSize());
 

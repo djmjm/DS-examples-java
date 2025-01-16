@@ -86,6 +86,20 @@ public class BinaryTree {
         return result;
     }
 
+    public String printPreOrder(){
+        Node nodeIter = start;
+        String result = "";
+
+        System.out.println(queuePrinting.size());
+        traversePreOrder(nodeIter);
+        while(!queuePrinting.isEmpty()){
+            result += queuePrinting.poll() + " - ";
+        }
+        
+        return result;
+    }
+
+
     
 
     public int getSize() {
@@ -122,6 +136,21 @@ public class BinaryTree {
 
         if(node.getChild_right() != null){ 
             traverseInOrder(node.getChild_right());
+        }
+
+        return node;
+    }
+
+    private Node traversePreOrder(Node node){
+
+        queuePrinting.add( node.getContent().getName() + " id(" + node.getId() + ")");
+
+        if(node.getChild_left() != null){ 
+            traversePreOrder(node.getChild_left());
+        }
+
+        if(node.getChild_right() != null){ 
+            traversePreOrder(node.getChild_right());
         }
 
         return node;

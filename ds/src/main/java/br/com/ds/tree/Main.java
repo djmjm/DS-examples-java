@@ -19,6 +19,7 @@ public class Main {
         System.out.println(tree.getSize());
 
         System.out.println(tree.printInOrder());
+        System.out.println(tree.printPreOrder());
         System.out.println(tree.printWidth());
     }
 }

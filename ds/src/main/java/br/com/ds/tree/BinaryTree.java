@@ -3,7 +3,6 @@ package br.com.ds.tree;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Stack;
 
 import br.com.ds.list.Element;
 import br.com.ds.util.UniqueRandom;
@@ -13,7 +12,6 @@ public class BinaryTree {
     private UniqueRandom idGenerator;
     private int size;
 
-    private Stack<String> stackPrinting;
     private LinkedList<String> queuePrinting;
     
     public BinaryTree(){
@@ -21,7 +19,6 @@ public class BinaryTree {
         start = null;
         size = 0;
 
-        stackPrinting = new Stack<String>();
         queuePrinting = new LinkedList<String>();
     }
 

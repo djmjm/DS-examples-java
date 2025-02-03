@@ -5,6 +5,7 @@ import br.com.ds.list.Element;
 public class Node {
 
     private int id;
+    private int height;
     private Element content;
     private Node child_left;
     private Node child_right;
@@ -13,6 +14,7 @@ public class Node {
     public Node(Element content, int id){
         this.content = content;
         this.id = id;
+        this.height = 0;
 
         parent = null;
         child_left = null;

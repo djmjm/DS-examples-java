@@ -16,7 +16,7 @@ This repository contains practical examples of data structures implemented in Ja
 - [x] Hash Table
 
 ## To Be Implemented 📝
-- [ ] Binary Tree
+- [x] Binary Tree
 - [ ] AVL Tree
 - [ ] B Tree
 - [ ] B+ Tree

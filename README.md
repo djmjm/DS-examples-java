@@ -17,10 +17,6 @@ This repository contains practical examples of data structures implemented in Ja
 
 ## To Be Implemented 📝
 - [x] Binary Tree
-- [ ] AVL Tree
-- [ ] B Tree
-- [ ] B+ Tree
-- [ ] N-ary Tree
 - [ ] Graphs
 - [ ] Sorting Algorithms
 - [ ] Binary Search

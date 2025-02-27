@@ -8,16 +8,16 @@ import br.com.ds.list.Element;
 import br.com.ds.util.UniqueRandom;
 
 public class BinaryTree {
-    private Node start;
-    private UniqueRandom idGenerator;
-    private int size;
+    protected Node start;
+    protected UniqueRandom idGenerator;
+    protected int size;
 
     private LinkedList<String> queuePrinting;
     
     public BinaryTree(){
         idGenerator = new UniqueRandom(10);
         start = null;
-        size = 0;
+        size = 1;
 
         queuePrinting = new LinkedList<String>();
     }

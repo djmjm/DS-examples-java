@@ -2,7 +2,7 @@ package br.com.ds.algorithms;
 
 public class Fibonacci {
     public static void main(String []args){
-        int n = 40;
+        int n = 5;
         long startTime = System.nanoTime();
         System.out.println(Fibonacci.recursive(n)); 
         long endTime = System.nanoTime();
